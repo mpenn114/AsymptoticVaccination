@@ -252,8 +252,9 @@ for beta = 0.01:0.01:5
     [t4,y4] = ode89(@(t,y) SIRODE(y,U(t),beta,0.5*beta,0.5*beta,0.25*beta,1,1,1),[0,10000],[1-10^(-4),10^(-4),0,0,0,0,0]);
     actualdecs(count) = (y4(length(y4),3) + y4(length(y4),6) -y3(length(y3),3) -y3(length(y3),6));
     count = count + 1;
+end
 %Repeat for epsilon = 0.01 = 10^{-2}
-endexponent = -2;
+exponent = -2;
 yvals2 = zeros(length(0.01:0.01:5),1);
 actualdecs2 = zeros(length(0.01:0.01:5),1);
 count = 1;
